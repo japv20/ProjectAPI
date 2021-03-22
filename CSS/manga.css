@@ -1,3 +1,78 @@
-body {
+:root {
+    --font-size: 1.5em;
+    --p-size: 1em;
+  }
+  
+  main {
+    background-color: lightblue;
+  }
+  
+  .sides {
+    background-color: white;
+    min-height: 400px;
+  }
+  
+  header {
+    font-size: var(--font-size);
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: lavender;
-}
+    padding: 10px 10px;
+    /* padding: 14px 16px; */
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+     /* margin-left: 5%; */
+  }
+  
+  a:hover {
+    background-color: lavenderblush;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0fr 2fr 0fr;
+    grid-template-rows: 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  main {
+    display: grid;
+    /* grid-template-columns: 0fr 2fr 0fr; */
+    padding: 15px 15px;
+    text-align: center;
+  }
+  
+  img {
+    height: 350px;
+    width: auto;
+  }
+    
+  h3 {
+    font-size: var(--font-size);
+    text-align: center;
+  }
+  
+  p {
+    font: var(--p-size);
+  }
+  
+  ul {
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 950px) {
+    .grid-container {
+      grid-template-columns: 1fr 6fr 1fr;
+    }
+  }
