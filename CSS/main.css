@@ -56,6 +56,12 @@ main {
 img {
   height: 360px;
   width: auto;
+  padding: 8px 8px;
+}
+
+img:hover {
+  box-shadow:5px 5px rgb(77, 111, 122);
+  height: 370px;
 }
   
 h3 {
