@@ -1,0 +1,85 @@
+header {
+    text-align: center;
+}
+
+#logo-anime {
+    /* border: 1px solid lavender; */
+    position: relative;
+    width: 200px;
+    height: auto;
+    vertical-align: middle;
+    transition: width 2s;
+    transition-timing-function: 5s;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: blur(0.5px) grayscale(90%);
+}
+
+#logo-anime:hover {
+    width: 220px;
+    filter: blur(0px);
+}
+
+#behind-logo {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 35px;
+    height: 110px;
+    vertical-align: middle;
+    animation-name: movement;
+    animation-duration: 4s;
+    animation-fill-mode: forwards; /* retain style values from last keyframe */
+}
+
+@keyframes movement {
+    from {
+        margin-left: 30px;
+        margin-top: 35px;
+    }
+
+    to {
+        margin-left: -30px;
+        margin-top: 15px;
+    }
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter p {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    color: black;
+    /* display: none; */
+    font-family: 'JetBrains Mono', monospace;
+    font: bold;
+    font-size: 18px;
+    border-right: .15em solid purple; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(20, end),
+      blink-line .5s step-end, infinite;
+    animation-play-state: paused;
+}
+
+#logo-text {
+    display: inline-block;
+}
+
+.logo-anime:hover, .typewriter p {
+    /* display: inline-block; */
+    animation-play-state: initial;
+}
+  
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-line {
+    from, to { border-color: transparent }
+    40% { border-color: rgb(0, 9, 128) }
+}
+/* p { display: inline;} This is if i want to have a p tag next to the picture as well */
