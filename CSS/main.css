@@ -12,10 +12,10 @@ main {
   min-height: 400px;
 }
 
-header {
+/* header {
   font-size: var(--font-size);
   text-align: center;
-}
+} */
 
 nav {
   display: flex;
@@ -59,7 +59,7 @@ img {
   padding: 8px 8px;
 }
 
-img:hover {
+main img:hover {
   box-shadow:5px 5px rgb(77, 111, 122);
   height: 370px;
 }
