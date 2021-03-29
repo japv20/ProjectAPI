@@ -112,8 +112,55 @@ ul {
   cursor: pointer;
 }
 
+.genre-buttons {
+  background-color: lavender;
+  border: none;
+}
+
+.genre-buttons:hover {
+  background-color: lavenderblush;
+}
+
+#search {
+  display: none;
+  font-size: var(--p-size);
+  background-color: white;
+  border: none;
+  width: 80%;
+  height: 20px;
+}
+
+form-icons i {
+  position: absolute;
+}
+
+#search-button, #clear-button {
+  background-color: lavender;
+  border: none;
+  height: 20px;
+  cursor: pointer;
+}
+
+#search-button:hover, #clear-button:hover {
+  background-color: lavenderblush;
+}
+
+#results {
+  display: grid;
+  grid-template-columns: 2fr;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+  background-color: lightblue;
+}
+
+
 @media screen and (min-width: 950px) {
   .grid-container {
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  #results {
     grid-template-columns: 1fr 6fr 1fr;
   }
 }
