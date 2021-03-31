@@ -4,7 +4,7 @@ header {
 
 header #svg-pic {
     height: 15px;
-    background-repeat: repeat-x;
+    /* background-repeat: repeat-x; */
 }
 
 header #svg-pic:hover {
