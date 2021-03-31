@@ -20,6 +20,46 @@ document.addEventListener('DOMContentLoaded', async() => {
     const upcomingAnimes = [...springAnimes, ...summerAnimes]
     console.log(upcomingAnimes)
 
+    let randomAnime = upcomingAnimes[Math.floor(Math.random() * upcomingAnimes.length)];
+    console.log(randomAnime)
+
+    for (let i=0; i < 4; i++) {
+        let randomPicked = upcomingAnimes[Math.floor(Math.random()*upcomingAnimes.length)]
+        console.log(randomPicked)
+        const imagesContainer = document.getElementById('gallery-pics')
+        imagesContainer.innerHTML += `
+        <div class="slides">
+        <img src="${randomPicked.image_url}" id="${randomPicked.mal_id}" alt="${randomPicked.title}" class="pics-gallery">
+        <div class="caption"> <caption class="text"> ${randomPicked.title} </caption> </div>
+        </div>
+        `;
+    }
+
+    let myIndex = 0;
+    carousel();
+
+    function carousel() {
+        let i;
+        let images = document.getElementsByClassName("pics-gallery");
+        let caption = document.getElementsByClassName('caption');
+        for (i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+            caption[i].style.display = "none";
+        }
+        
+        myIndex++;
+        if (myIndex > images.length) {myIndex = 1}    
+        images[myIndex-1].style.display = "block";
+        caption[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+    const nameForm = document.getElementsByClassName('form');
+    const submitButton = document.getElementById('submit-button');
+    submitButton.addEventListener('click', function(event) {
+        console.log(nameForm.value)
+    })
+
     upcomingAnimes.forEach(animeInList => {
         
         function dataByMALID(mal_id) {
@@ -40,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async() => {
             <li> Type: ${byMalID.type} - Episodes: ${animeInList.episodes} </li>
             <p> Genres: </p>
             </ul>
-            <p> Click <a href="${byMalID.url}" here </a> for more information. </p>`
+            <p> Click <a href="${byMalID.url}"> here </a> for more information. </p>`
 
             for (let i=0; i < byMalID.genres.length; ++i) {
                 console.log(byMalID.genres);
@@ -115,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async() => {
             <p> Type: ${upcomingAnimes[i].type} - Episodes: ${upcomingAnimes[i].episodes} </p>
             <p> Click <a href="${upcomingAnimes[i].url}" here </a> for more information. </p>
             </div>
-            </span> `
+            </span>`
                 } 
                 else {
                     const errorMessage = document.querySelector('#error-results');
