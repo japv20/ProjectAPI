@@ -5,11 +5,12 @@ header {
 header #svg-pic {
     height: 30px;
     /* background-repeat: repeat-x; */
-}
-
-header #svg-pic:hover {
     animation: rotationMove 5s infinite;
 }
+
+/* header #svg-pic:hover {
+    animation: rotationMove 5s infinite;
+} */
 
 @keyframes rotationMove {
     50% { transform: rotate(180deg);}
