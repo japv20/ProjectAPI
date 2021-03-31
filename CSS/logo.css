@@ -2,6 +2,19 @@ header {
     text-align: center;
 }
 
+header #svg-pic {
+    height: 15px;
+    background-repeat: repeat-x;
+}
+
+header #svg-pic:hover {
+    animation: rotationMove 5s infinite;
+}
+
+@keyframes rotationMove {
+    50% { transform: rotate(180deg);}
+}
+
 #logo-anime {
     /* border: 1px solid lavender; */
     position: relative;
@@ -17,7 +30,7 @@ header {
 }
 
 #logo-anime:hover {
-    width: 220px;
+    /* width: 220px; */
     filter: blur(0px);
 }
 
@@ -59,17 +72,17 @@ header {
     animation: 
       typing 3.5s steps(20, end),
       blink-line .5s step-end, infinite;
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
 }
 
 #logo-text {
     display: inline-block;
 }
 
-.logo-anime:hover, .typewriter p {
-    /* display: inline-block; */
+/* .logo-anime:hover, .typewriter p {
+    display: inline-block;
     animation-play-state: initial;
-}
+ } */
   
 /* The typing effect */
 @keyframes typing {
