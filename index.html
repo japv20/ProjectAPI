@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/logo.css">
+    <link rel="stylesheet" href="CSS/gallery.css">
     <!-- Icon libray -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Header font -->
@@ -35,21 +36,36 @@
             <button id="clear-button"> <i class="fa fa-refresh"></i> </button>
         </form>
     </nav>
-    <div id="results"></div>
-    <div id="error-results"></div>
+    <!-- <div id="results"></div>
+    <div id="error-results"></div> -->
 
     <div class="grid-container">
         <div class="sides"></div>
     
         <main>
             <div id="myModal" class="modal">
-
-                <div class="modal-details">
+                    <div class="modal-details">
                     <!--'&times' is a multiplication sign in html (way to draw x to close) -->
                     <span class="close">&times;</span> 
                     <article class="info-container"></article>
                 </div>
             </div>
+
+            
+        <div id="results"></div>
+        <div id="error-results"></div>
+
+            <div id="gallery-pics">
+            </div>
+
+            <form class="form" name="myForm" method="post">
+                Name: <input type="text" id="name" name="fname">
+                <button id="submit-button" type="submit" value="Submit"> </button>
+            </form>
+            
+            <p id="info-website"> Kei reports is a blog where you can find the soon-to-come animes for the seasons of
+                Spring and Summer 2021. Click on the pictures to get information about airing date and synopsis!
+            </p>
             
             <div class="wallpaper"></div>
         </main>
