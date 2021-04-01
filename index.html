@@ -57,15 +57,20 @@
 
             <div id="gallery-pics">
             </div>
-
-            <form class="form" name="myForm" method="post">
-                Name: <input type="text" id="name" name="fname">
-                <button id="submit-button" type="submit" value="Submit"> </button>
-            </form>
             
             <p id="info-website"> Kei reports is a blog where you can find the soon-to-come animes for the seasons of
-                Spring and Summer 2021. Click on the pictures to get information about airing date and synopsis!
+                Spring and Summer 2021. Click on the pictures to get information about airing date and synopsis! Feel free 
+                to visit the 'Top 50 Manga' section!
             </p>
+
+            <form class="form" name="myForm" method="post">
+                <label> Enter your email to subscribe our newsletter and get updated on the soon-to-come animes 
+                for Autumn and Winter: </label> <input type="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                required name="email" id="email" placeholder="email@example.com">
+                <button id="submit-button" type="submit" value="Submit"> Submit </button>
+            </form>
+            <p id="thankyou"></p>
+            <p id="error"></p>
             
             <div class="wallpaper"></div>
         </main>

@@ -54,11 +54,22 @@ document.addEventListener('DOMContentLoaded', async() => {
         setTimeout(carousel, 2000); // Change image every 2 seconds
     }
 
-    const nameForm = document.getElementsByClassName('form');
-    const submitButton = document.getElementById('submit-button');
-    submitButton.addEventListener('click', function(event) {
-        console.log(nameForm.value)
-    })
+    function userEmail() {
+    const introducedEmail = document.querySelector('#email').value;
+    console.log(`Email is: ${introducedEmail}`);
+}
+
+const getEmail = document.querySelector('#submit-button').addEventListener('click', function (event) {
+    event.preventDefault();
+    userEmail();
+    thankYouNotice = document.getElementById('thankyou');
+    thankYouNotice.innerHTML = `Thank you for subscribing!`;
+
+    if (introducedEmail == "") {
+        errorNotice = document.getElementById('error');
+        errorNotice.innerHTML = `Insert a valid email address`;
+    }
+})
 
     upcomingAnimes.forEach(animeInList => {
         
