@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         //         searchInput.style.display = "none";
         //     }
 
-        // searchInput.style.display = "inline-block";
+        searchInput.style.display = "inline-block";
     }
 
     function searchBar() {
