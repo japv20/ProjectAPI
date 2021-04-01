@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', async() => {
         const searchButton = document.querySelector('#search-button');
         const searchInput = document.querySelector('#search');
         function openAndCloseSearch() {
-            // if (searchInput.style.display == "inline-block") {
-            //     searchInput.style.display = "none";
-            // } else {
+            // if (searchInput.style.display == "none") {
             //     searchInput.style.display = "inline-block";
+            // } else {
+            //     searchInput.style.display = "none";
             // }
             searchInput.style.display = "inline-block";
         }
@@ -156,10 +156,12 @@ document.addEventListener('DOMContentLoaded', async() => {
             <p> Click <a href="${upcomingAnimes[i].url}" here </a> for more information. </p>
             </div>
             </span>`
+            const errorMessage = document.querySelector('#error-results');
+            errorMessage.style.display = "none"
                 } 
                 else {
                     const errorMessage = document.querySelector('#error-results');
-                    // errorMessage.innerHTML = (new Error ('Sorry! We are having trouble finding your search. Try again!'));
+                    errorMessage.innerHTML = (new Error ('Sorry! We are having trouble finding your search. Please restart your search before starting a new one :)'));
                     }
             }
         }
