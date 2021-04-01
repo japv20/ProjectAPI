@@ -4,7 +4,8 @@
 }
 
 main {
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color: rgb(160, 212, 255);
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -14,7 +15,8 @@ nav {
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: lavender;
+  /* background-color: lavender; */
+  background-color: rgb(232, 198, 255);
   padding: 5px 5px;
 }
 
@@ -25,7 +27,8 @@ nav a {
 }
 
 a:hover {
-  background-color: lavenderblush;
+  /* background-color: lavenderblush; */
+  background-color: rgb(242, 224, 255);
 }
 
 #info-website {
@@ -78,10 +81,12 @@ img {
   height: auto;
   width: auto;
   padding: 5px 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
 
 main .wallpaper img:hover {
-  box-shadow:5px 5px rgb(77, 111, 122);
+  box-shadow:5px 5px rgb(0, 110, 255);
   height: 350px;
 }
   
@@ -94,6 +99,16 @@ p, ul {
   font-size: 16px;
   text-align: center;
   list-style-type: none;
+}
+
+#gallery-pics {
+  border: 1px solid;
+  height: 400px;
+}
+
+#gallery-pics img {
+  height: 360px;
+  padding: 5px 5px;
 }
 
 .modal {
@@ -113,13 +128,13 @@ p, ul {
   background-color: #fefefe;
   margin: 8%;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid rgb(136, 136, 136);
   width: auto;
   vertical-align: center;
 }
 
 .close {
-  color: #aaa;
+  color: rgb(176, 176, 176);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -143,12 +158,12 @@ p, ul {
 }
 
 .genre-buttons {
-  background-color: lavender;
+  background-color: rgb(232, 198, 255);
   border: none;
 }
 
 .genre-buttons:hover {
-  background-color: lavenderblush;
+  background-color: rgb(242, 224, 255);
 }
 
 #search {
@@ -165,21 +180,21 @@ form-icons i {
 }
 
 #search-button, #clear-button {
-  background-color: lavender;
+  background-color: rgb(232, 198, 255);
   border: none;
   height: 20px;
   cursor: pointer;
 }
 
 #search-button:hover, #clear-button:hover {
-  background-color: lavenderblush;
+  background-color: rgb(242, 224, 255);
 }
 
 #results {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  background-color: lightblue;
+  background-color: rgb(160, 212, 255);;
 }
 
 #results img {

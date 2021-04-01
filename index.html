@@ -63,14 +63,16 @@
                 to visit the 'Top 50 Manga' section!
             </p>
 
-            <form class="form" name="myForm" method="post">
+            <!-- <form class="form" name="myForm" action="/my-handling-form-page" method="post"> -->
+                <form class="form" name="myForm">
                 <label> Enter your email to subscribe our newsletter and get updated on the soon-to-come animes 
-                for Autumn and Winter: </label> <input type="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                required name="email" id="email" placeholder="email@example.com">
-                <button id="submit-button" type="submit" value="Submit"> Submit </button>
+                for Autumn and Winter: </label> <br> 
+                <!-- <input type="email" name="email" id="email" placeholder="email@example.com" pattern=".+@gmail.com" required/> -->
+                <input type="email" name="email" id="email" placeholder="email@example.com">
+                <br />
+                <!-- <button id="submit-button" type="submit" value="Submit"> Submit </button> -->
+                <input type="submit" id="submit-button" value="Submit">
             </form>
-            <p id="thankyou"></p>
-            <p id="error"></p>
             
             <div class="wallpaper"></div>
         </main>

@@ -51,25 +51,8 @@ document.addEventListener('DOMContentLoaded', async() => {
         if (myIndex > images.length) {myIndex = 1}    
         images[myIndex-1].style.display = "block";
         caption[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); // Change image every 2 seconds
+        setTimeout(carousel, 3500); // Change image every 3.5 seconds
     }
-
-    function userEmail() {
-    const introducedEmail = document.querySelector('#email').value;
-    console.log(`Email is: ${introducedEmail}`);
-}
-
-const getEmail = document.querySelector('#submit-button').addEventListener('click', function (event) {
-    event.preventDefault();
-    userEmail();
-    thankYouNotice = document.getElementById('thankyou');
-    thankYouNotice.innerHTML = `Thank you for subscribing!`;
-
-    if (introducedEmail == "") {
-        errorNotice = document.getElementById('error');
-        errorNotice.innerHTML = `Insert a valid email address`;
-    }
-})
 
     upcomingAnimes.forEach(animeInList => {
         
@@ -102,10 +85,11 @@ const getEmail = document.querySelector('#submit-button').addEventListener('clic
             }
         }
 
+        console.log(upcomingAnimes.genres)
+
         const informationPrint = document.querySelector('.wallpaper');
         const animeWallpapers = animeInList.image_url;
         informationPrint.innerHTML += ` <img src="${animeWallpapers}" id="${animeInList.mal_id}" alt="Anime: ${animeInList.title}"> `
-        console.log()
 
         const animePictures = document.getElementsByTagName("img");
         for (i= 0; i < animePictures.length; i++) {
@@ -153,19 +137,18 @@ const getEmail = document.querySelector('#submit-button').addEventListener('clic
             introducedTitle = document.querySelector('#search').value;
             console.log(`You are looking for ${introducedTitle}`);
 
-
             for (i = 0; i < upcomingAnimes.length; i++) {
                 if (upcomingAnimes[i].title.toLowerCase() == introducedTitle.toLowerCase()) {
                     const printSearchedData = document.querySelector('#results');
                     printSearchedData.innerHTML = `
                     <h3> ${upcomingAnimes[i].title} </h3>
                     <img src="${upcomingAnimes[i].image_url}" id="${upcomingAnimes[i].mal_id}" alt="Anime: ${upcomingAnimes[i].title}">
-            <span id="resultsDetails">
-            <div class="dataResults">
-            <p> Synopsis: ${upcomingAnimes[i].synopsis}. </p>
-            <p> Type: ${upcomingAnimes[i].type} - Episodes: ${upcomingAnimes[i].episodes} </p>
-            <p> Click <a href="${upcomingAnimes[i].url}" here </a> for more information. </p>
-            </div>
+                    <span id="resultsDetails">
+                    <div class="dataResults">
+                    <p> Synopsis: ${upcomingAnimes[i].synopsis}. </p>
+                    <p> Type: ${upcomingAnimes[i].type} - Episodes: ${upcomingAnimes[i].episodes} </p>
+                    <p> Click <a href="${upcomingAnimes[i].url}" here </a> for more information. </p>
+                </div>
             </span>`
             const errorMessage = document.querySelector('#error-results');
             errorMessage.style.display = "none"
