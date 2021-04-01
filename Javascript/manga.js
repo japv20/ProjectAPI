@@ -71,7 +71,13 @@ document.addEventListener('DOMContentLoaded', async() => {
     const searchButton = document.querySelector('#search-button');
     const searchInput = document.querySelector('#search');
     function openAndCloseSearch() {
-        searchInput.style.display = "inline-block";
+        // if (searchInput.style.display == "none") {
+        //         searchInput.style.display = "inline-block";
+        //     } else {
+        //         searchInput.style.display = "none";
+        //     }
+
+        // searchInput.style.display = "inline-block";
     }
 
     function searchBar() {
@@ -84,15 +90,15 @@ document.addEventListener('DOMContentLoaded', async() => {
                 printSearchedData.innerHTML = `
                 <h3> ${topMangas[i].title} </h3>
                 <img src="${topMangas[i].image_url}" id="${topMangas[i].mal_id}" alt="Anime: ${topMangas[i].title}">
-                <span id="resultsDetails">
                 <div class="dataResults">
+                <ul>
                 <li> Start date: ${topMangas[i].start_date} </li>
                 <li> End date: ${topMangas[i].end_date} </li>
                 <li> Rank: ${topMangas[i].rank} - Score: ${topMangas[i].score}/10 </li>
                 <p> Type: ${topMangas[i].type} - Volumes: ${topMangas[i].volumes} </p>
-                <p> Click <a href="${topMangas[i].url}" here </a> for more information. </p>
-            </div>
-        </span>`
+                <p> Click <a href="${topMangas[i].url}"> here </a> for more information. </p>
+                </ul>
+                </div>`
         const errorMessage = document.querySelector('#error-results');
         errorMessage.style.display = "none"
             } 

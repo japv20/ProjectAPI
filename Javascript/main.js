@@ -143,13 +143,11 @@ document.addEventListener('DOMContentLoaded', async() => {
                     printSearchedData.innerHTML = `
                     <h3> ${upcomingAnimes[i].title} </h3>
                     <img src="${upcomingAnimes[i].image_url}" id="${upcomingAnimes[i].mal_id}" alt="Anime: ${upcomingAnimes[i].title}">
-                    <span id="resultsDetails">
                     <div class="dataResults">
                     <p> Synopsis: ${upcomingAnimes[i].synopsis}. </p>
                     <p> Type: ${upcomingAnimes[i].type} - Episodes: ${upcomingAnimes[i].episodes} </p>
-                    <p> Click <a href="${upcomingAnimes[i].url}" here </a> for more information. </p>
-                </div>
-            </span>`
+                    <p> Click <a href="${upcomingAnimes[i].url}"> here </a> for more information. </p>
+                </div> `
             const errorMessage = document.querySelector('#error-results');
             errorMessage.style.display = "none"
                 } 
