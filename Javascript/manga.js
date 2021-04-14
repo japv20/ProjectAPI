@@ -33,13 +33,6 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
 
         const mangaCards = document.querySelector('.cards');
-        // mangaCards.innerHTML += `<ul>
-        // <h3> ${mangaInList.title} </h3>
-        // <p> Type: ${mangaInList.type} </p>
-        // <img src="${mangaInList.image_url}">
-        // <p> Rank: ${mangaInList.rank} - Score: ${mangaInList.score}/10 </p>
-        // <p> Click <a href="${mangaInList.url}"> here </a> for more information </p>
-        // </ul>`
         const mangaWalppapers = mangaInList.image_url 
         mangaCards.innerHTML += ` <img src="${mangaInList.image_url}" id="${mangaInList.mal_id}" alt="Manga ${mangaInList.title}"> `
 
@@ -51,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async() => {
             const closeButton = document.querySelector('.close');
 
             pictureInPage.addEventListener('click', function (event) {
-                console.log("You clicked me.")
+                // console.log("You clicked me.")
                 const getMalData = dataByMALID(event.target.id);
                 dataWantedToDisplay(getMalData)
 
@@ -69,17 +62,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         })
     })
     const searchButton = document.querySelector('#search-button');
-    const searchInput = document.querySelector('#search');
-    function openAndCloseSearch() {
-        // if (searchInput.style.display == "none") {
-        //         searchInput.style.display = "inline-block";
-        //     } else {
-        //         searchInput.style.display = "none";
-        //     }
-
-        searchInput.style.display = "inline-block";
-    }
-
+    // const searchInput = document.querySelector('#search');
     function searchBar() {
         introducedTitle = document.querySelector('#search').value;
         console.log(`You are looking for ${introducedTitle}`);
@@ -111,7 +94,6 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     searchButton.addEventListener('click', function(event) {
         event.preventDefault();
-        openAndCloseSearch();
         searchBar();
     })
 })

@@ -11,7 +11,7 @@ const getSummerData = async() => {
 }
 
 document.addEventListener('DOMContentLoaded', async() => {
-    console.log("Hello")
+    // console.log("Hello")
     const springData = await getSpringData(); //console.log(springData);
     const summerData = await getSummerData(); //console.log(summerData);
 
@@ -20,12 +20,11 @@ document.addEventListener('DOMContentLoaded', async() => {
     const upcomingAnimes = [...springAnimes, ...summerAnimes]
     console.log(upcomingAnimes)
 
-    let randomAnime = upcomingAnimes[Math.floor(Math.random() * upcomingAnimes.length)];
-    console.log(randomAnime)
+    let randomAnime = upcomingAnimes[Math.floor(Math.random() * upcomingAnimes.length)]; // console.log(randomAnime)
 
     for (let i=0; i < 4; i++) {
         let randomPicked = upcomingAnimes[Math.floor(Math.random()*upcomingAnimes.length)]
-        console.log(randomPicked)
+        // console.log(randomPicked)
         const imagesContainer = document.getElementById('gallery-pics')
         imagesContainer.innerHTML += `
         <div class="slides">
@@ -51,8 +50,22 @@ document.addEventListener('DOMContentLoaded', async() => {
         if (myIndex > images.length) {myIndex = 1}    
         images[myIndex-1].style.display = "block";
         caption[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 3500); // Change image every 3.5 seconds
+        let timer = setTimeout(carousel, 1500); // Change image every 3.5 seconds
+    
+        const pauseCarousel = document.getElementById('pause');
+        pauseCarousel.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log("Pause")
+            clearTimeout(timer);
+        })
     }
+
+    const playCarousel = document.getElementById('play');
+    playCarousel.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log("Play");
+        setTimeout(carousel, 1500);
+    })
 
     upcomingAnimes.forEach(animeInList => {
         
@@ -62,8 +75,6 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     
         function dataWantedToDisplay(byMalID) {
-            console.log(byMalID.genres);
-
             const formatedDate = DateTime.fromISO(byMalID.airing_start).toFormat('DDD');
             const dataContainer = document.querySelector('.info-container');
             dataContainer.innerHTML = ` 
@@ -77,35 +88,26 @@ document.addEventListener('DOMContentLoaded', async() => {
             <p> Click <a href="${byMalID.url}"> here </a> for more information. </p>`
 
             for (let i=0; i < byMalID.genres.length; ++i) {
-                console.log(byMalID.genres);
+                // console.log(byMalID.genres);
                 const dataListItem = document.querySelector('#animeDetails');
                 dataListItem.innerHTML += `
-                
                 <button type="button" class="genre-buttons" id="${byMalID.genres[i].mal_id}"> ${byMalID.genres[i].name} </button>`
             }
         }
-
-        console.log(upcomingAnimes.genres)
 
         const informationPrint = document.querySelector('.wallpaper');
         const animeWallpapers = animeInList.image_url;
         informationPrint.innerHTML += ` <img src="${animeWallpapers}" id="${animeInList.mal_id}" alt="Anime: ${animeInList.title}"> `
 
-        const animePictures = document.getElementsByTagName("img");
-        for (i= 0; i < animePictures.length; i++) {
-            //animePictures[i].className += "anime-pics"
-        }
-        //console.log(animePictures)
-    
-        const wallpaperAnime = [...animePictures]; // Array of Pictures.
-        //console.log(wallpaperAnime);
+        const animePictures = document.getElementsByTagName("img"); //console.log(animePictures)
+        const wallpaperAnime = [...animePictures]; // Array of Pictures. //console.log(wallpaperAnime);
 
         wallpaperAnime.forEach(pictureInPage => {
             const modal = document.querySelector('#myModal');
             const closeButton = document.querySelector('.close');
 
             pictureInPage.addEventListener('click', function (event) {
-                console.log("You clicked me.")
+                // console.log("You clicked me.")
                 const getMalData = dataByMALID(event.target.id);
                 dataWantedToDisplay(getMalData)
 
@@ -123,16 +125,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         })
     })
         const searchButton = document.querySelector('#search-button');
-        const searchInput = document.querySelector('#search');
-        function openAndCloseSearch() {
-            // if (searchInput.style.display == "none") {
-            //     searchInput.style.display = "inline-block";
-            // } else {
-            //     searchInput.style.display = "none";
-            // }
-            searchInput.style.display = "inline-block";
-        }
-
+        // const searchInput = document.querySelector('#search');
         function searchBar() {
             introducedTitle = document.querySelector('#search').value;
             console.log(`You are looking for ${introducedTitle}`);
@@ -157,12 +150,9 @@ document.addEventListener('DOMContentLoaded', async() => {
                     }
             }
         }
-
         searchButton.addEventListener('click', function(event) {
             event.preventDefault();
-            openAndCloseSearch();
             searchBar();
         })
+    })
 })
-})
-
