@@ -16,11 +16,11 @@
 </head>
 <body>
     <header>
-        <img src="Pictures/tsukkiback.png" alt="tsukishima kei from haikyuu" id ="behind-logo">
+        <img src="Pictures/tsukkiback.png" alt="tsukishima kei from haikyuu" id ="behind-logo" class="animation-behind-logo">
         <img src="Pictures/logokei.png" alt="logo" id="logo-anime">
         <img src="Pictures/svg-starr.svg" alt="SVG" id="svg-pic">
-        <span id="logo-text">  
-            <div class="typewriter">
+        <span id="logo-text" class="animation">  
+            <div id="text" class="typewriter">
                 <p> Upcoming Animes! </p>
             </div>
         </span>
@@ -28,7 +28,6 @@
     <nav>
         <a href="index.html"> Anime </a>
         <a href="manga.html"> Manga </a>
-        <!-- <i class="fa fa-search"></i> -->
         <form>
             <label for="search"></label>
             <input type="text" id="search" name="search" placeholder="Insert anime title"> 
@@ -36,8 +35,6 @@
             <button id="clear-button"> <i class="fa fa-refresh"></i> </button>
         </form>
     </nav>
-    <!-- <div id="results"></div>
-    <div id="error-results"></div> -->
 
     <div class="grid-container">
         <div class="sides"></div>
@@ -56,6 +53,8 @@
         <div id="error-results"></div>
 
             <div id="gallery-pics">
+                <button> <i id="play" class="fa fa-play"></i> </button>
+                <button> <i id="pause" class="fa fa-pause"></i> </button>
             </div>
             
             <p id="info-website"> Kei reports is a blog where you can find the soon-to-come animes for the seasons of
@@ -81,12 +80,13 @@
     </div>
 
     <footer>
-        <p> Developed by JPV. Powered by APIName </p>
+        <p> Developed by Jackeline Palacios Vaz. Powered by Jikan </p>
     </footer>
 </body>
 
 <script src="Javascript/luxon.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"> </script>
 <script src="Javascript/main.js"></script>
+<script src="Javascript/logo.js"></script>
 
 </html>
