@@ -2,10 +2,25 @@
     box-sizing: border-box;
 }
 
+#gallery-pics {
+    border: 1px solid;
+    height: 400px;
+}
+  
 #gallery-pics img {
-    max-height: 350px;
+    max-height: 360px;
+    max-width: 360px;
     position: relative;
     margin: auto;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+  
+#gallery-pics button {
+    background-color: rgb(160, 212, 255);
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
 }
 
 .caption {
@@ -18,8 +33,4 @@
     display: none;
     background-color: rgb(219, 253, 255);
     width: 100%;
-}
-
-#gallery-pics img:hover {
-    filter: drop-shadow(8px 8px 10px white);
 }

@@ -4,8 +4,8 @@ header {
 
 header #svg-pic {
     height: 30px;
-    /* background-repeat: repeat-x; */
     animation: rotationMove 5s infinite;
+    cursor: pointer;
 }
 
 /* header #svg-pic:hover {
@@ -31,16 +31,18 @@ header #svg-pic {
 }
 
 #logo-anime:hover {
-    /* width: 220px; */
     filter: blur(0px);
 }
 
 #behind-logo {
-    position: absolute;
     margin-left: 30px;
     margin-top: 35px;
     height: 110px;
     vertical-align: middle;
+}
+
+.animation-behind-logo {
+    position: absolute;
     animation-name: movement;
     animation-duration: 4s;
     animation-fill-mode: forwards; /* retain style values from last keyframe */
@@ -73,17 +75,17 @@ header #svg-pic {
     animation: 
       typing 3.5s steps(20, end),
       blink-line .5s step-end, infinite;
-    /* animation-play-state: paused; */
+    animation-play-state: paused;
 }
 
 #logo-text {
     display: inline-block;
 }
 
-/* .logo-anime:hover, .typewriter p {
-    display: inline-block;
+.logo-anime:hover, .typewriter p {
+    /* display: inline-block; */
     animation-play-state: initial;
- } */
+}
   
 /* The typing effect */
 @keyframes typing {
