@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', async() => {
             dataContainer.innerHTML = ` 
             <h3> ${byMalID.title} </h3>
             <ul id="animeDetails">
-            <li> Synopsis: ${byMalID.synopsis}. </li>
-            <li> Start date: ${formatedDate} </li>
-            <li> Type: ${byMalID.type} - Episodes: ${animeInList.episodes} </li>
-            <p> Genres: </p>
+            <li> <b> Synopsis: </b> ${byMalID.synopsis}. </li>
+            <li> <b> Start date: </b> ${formatedDate} </li>
+            <li> <b> Type: </b> ${byMalID.type} - <b> Episodes: </b> ${animeInList.episodes} </li>
+            <p> <b> Genres: </b> </p>
             </ul>
             <p> Click <a href="${byMalID.url}"> here </a> for more information. </p>`
 
@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', async() => {
                 // console.log(byMalID.genres);
                 const dataListItem = document.querySelector('#animeDetails');
                 dataListItem.innerHTML += `
-                <button type="button" class="genre-buttons" id="${byMalID.genres[i].mal_id}"> ${byMalID.genres[i].name} </button>`
+                <li> ${byMalID.genres[i].name} </li>
+                `
             }
         }
 
@@ -137,8 +138,8 @@ document.addEventListener('DOMContentLoaded', async() => {
                     <h3> ${upcomingAnimes[i].title} </h3>
                     <img src="${upcomingAnimes[i].image_url}" id="${upcomingAnimes[i].mal_id}" alt="Anime: ${upcomingAnimes[i].title}">
                     <div class="dataResults">
-                    <p> Synopsis: ${upcomingAnimes[i].synopsis}. </p>
-                    <p> Type: ${upcomingAnimes[i].type} - Episodes: ${upcomingAnimes[i].episodes} </p>
+                    <p> <b> Synopsis: </b> ${upcomingAnimes[i].synopsis}. </p>
+                    <p> <b> Type: </b> ${upcomingAnimes[i].type} - <b> Episodes: </b> ${upcomingAnimes[i].episodes} </p>
                     <p> Click <a href="${upcomingAnimes[i].url}"> here </a> for more information. </p>
                 </div> `
             const errorMessage = document.querySelector('#error-results');
