@@ -148,15 +148,6 @@ p, ul {
   padding-left: 0%;
 }
 
-.genre-buttons {
-  background-color: var(--lavender);
-  border: none;
-}
-
-.genre-buttons:hover {
-  background-color: var(--lavender-hover);
-}
-
 #search {
   display: inline-block;
   font-size: 14px;
