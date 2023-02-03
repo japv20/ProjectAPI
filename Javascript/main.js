@@ -1,22 +1,24 @@
 var DateTime = luxon.DateTime;
 
 const getSpringData = async() => {
-    let spring = await axios.get("https://api.jikan.moe/v3/season/2021/spring");
+    // let spring = await axios.get("https://api.jikan.moe/v3/season/2021/spring");
+    let spring = await axios.get("https://api.jikan.moe/v4/seasons/2023/spring");
     return spring;
 }
 
 const getSummerData = async() => {
-    let summer = await axios.get("https://api.jikan.moe/v3/season/2021/summer");
+    // let summer = await axios.get("https://api.jikan.moe/v3/season/2021/summer");
+    let summer = await axios.get("https://api.jikan.moe/v4/seasons/2023/summer");
     return summer;
 }
 
 document.addEventListener('DOMContentLoaded', async() => {
     // console.log("Hello")
-    const springData = await getSpringData(); //console.log(springData);
-    const summerData = await getSummerData(); //console.log(summerData);
+    const springData = await getSpringData(); // console.log(springData);
+    const summerData = await getSummerData(); // console.log(summerData);
 
-    const springAnimes = springData.data.anime; // spring array
-    const summerAnimes = summerData.data.anime; // summer array
+    const springAnimes = springData.data.data; // spring array
+    const summerAnimes = summerData.data.data; // summer array
     const upcomingAnimes = [...springAnimes, ...summerAnimes]
     console.log(upcomingAnimes)
 
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         const imagesContainer = document.getElementById('gallery-pics')
         imagesContainer.innerHTML += `
         <div class="slides">
-        <img src="${randomPicked.image_url}" id="${randomPicked.mal_id}" alt="${randomPicked.title}" class="pics-gallery">
+        <img src="${randomPicked.images.jpg.image_url}" id="${randomPicked.mal_id}" alt="${randomPicked.title}" class="pics-gallery">
         <div class="caption"> <caption class="text"> ${randomPicked.title} </caption> </div>
         </div>
         `;
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         if (myIndex > images.length) {myIndex = 1}    
         images[myIndex-1].style.display = "block";
         caption[myIndex-1].style.display = "block";  
-        let timer = setTimeout(carousel, 1500); // Change image every 3.5 seconds
+        let timer = setTimeout(carousel, 2000); // Change image every 4 seconds
     
         const pauseCarousel = document.getElementById('pause');
         pauseCarousel.addEventListener('click', function(event) {
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     playCarousel.addEventListener('click', function(event) {
         event.preventDefault();
         console.log("Play");
-        setTimeout(carousel, 1500);
+        setTimeout(carousel, 2000);
     })
 
     upcomingAnimes.forEach(animeInList => {
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
     
         function dataWantedToDisplay(byMalID) {
-            const formatedDate = DateTime.fromISO(byMalID.airing_start).toFormat('DDD');
+            const formatedDate = DateTime.fromISO(byMalID.aired.from).toFormat('DDD');
             const dataContainer = document.querySelector('.info-container');
             dataContainer.innerHTML = ` 
             <h3> ${byMalID.title} </h3>
@@ -97,7 +99,8 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
 
         const informationPrint = document.querySelector('.wallpaper');
-        const animeWallpapers = animeInList.image_url;
+        // const animeWallpapers = animeInList.image_url;
+        const animeWallpapers = animeInList.images.jpg.image_url;
         informationPrint.innerHTML += ` <img src="${animeWallpapers}" id="${animeInList.mal_id}" alt="Anime: ${animeInList.title}"> `
 
         const animePictures = document.getElementsByTagName("img"); //console.log(animePictures)
