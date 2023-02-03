@@ -1,16 +1,15 @@
 var DateTime = luxon.DateTime;
 
 const getData = async() => {
-    let data = await axios.get("https://api.jikan.moe/v3/top/manga");
+    let data = await axios.get("https://api.jikan.moe/v4/top/manga");
     return data;
 }
 
 document.addEventListener('DOMContentLoaded', async() => {
     console.log("Hello")
     const mangaData = await getData();
-    console.log(mangaData)
-    console.log(mangaData.data.top) // array
-    topMangas = mangaData.data.top;
+    console.log(mangaData) // console.log(mangaData.data.data) // array
+    let topMangas = mangaData.data.data;
 
     topMangas.forEach(mangaInList => {
 
@@ -20,12 +19,13 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
 
         function dataWantedToDisplay(byMalID) {
+            const formatedDate = DateTime.fromISO(byMalID.published.from).toFormat('DDD');
             const dataContainer = document.querySelector('.info-container');
             dataContainer.innerHTML = ` 
             <h3> ${byMalID.title} </h3>
             <ul id="animeDetails">
-            <li> Start date: ${byMalID.start_date} </li>
-            <li> End date: ${byMalID.end_date} </li>
+            <li> ${byMalID.synopsis} </li>
+            <li> Published date: ${formatedDate} </li>
             <li> Rank: ${byMalID.rank} - Score: ${byMalID.score}/10 </li>
             <li> Type: ${byMalID.type} - Volumes: ${byMalID.volumes} </li>
             </ul>
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
 
         const mangaCards = document.querySelector('.cards');
-        const mangaWalppapers = mangaInList.image_url 
-        mangaCards.innerHTML += ` <img src="${mangaInList.image_url}" id="${mangaInList.mal_id}" alt="Manga ${mangaInList.title}"> `
+        // const mangaWalppapers = mangaInList.images.jpg 
+        mangaCards.innerHTML += ` <img src="${mangaInList.images.jpg}" id="${mangaInList.mal_id}" alt="Manga ${mangaInList.title}"> `
 
         const mangaPictures = document.getElementsByTagName('img'); // console.log(mangaPictures)
         const wallpaperManga = [... mangaPictures]; // console.log(wallpaperManga);
