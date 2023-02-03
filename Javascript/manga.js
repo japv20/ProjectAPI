@@ -33,8 +33,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         }
 
         const mangaCards = document.querySelector('.cards');
-        // const mangaWalppapers = mangaInList.images.jpg 
-        mangaCards.innerHTML += ` <img src="${mangaInList.images.jpg}" id="${mangaInList.mal_id}" alt="Manga ${mangaInList.title}"> `
+        const mangaWalppapers = mangaInList.images.jpg.image_url;
+        // console.log(mangaWalppapers);
+        mangaCards.innerHTML += ` <img src="${mangaInList.images.jpg.image_url}" id="${mangaInList.mal_id}" alt="Manga ${mangaInList.title}"> `
 
         const mangaPictures = document.getElementsByTagName('img'); // console.log(mangaPictures)
         const wallpaperManga = [... mangaPictures]; // console.log(wallpaperManga);
