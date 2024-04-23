@@ -1,16 +1,24 @@
 :root {
   --font-size: 1.5em;
   --p-size: 1.3em;
-  --light-blue: rgb(160, 212, 255);
-  --dark-blue-hover: rgb(0, 110, 255);
-  --lavender: rgb(232, 198, 255);
+  /* --nav-color: rgb(232, 198, 255); */
   --lavender-hover: rgb(242, 224, 255);
+  --nav-color: rgb(128, 0, 128);
+  --primary-color: rgb(30, 30, 30);
+  --secondary-color: rgb(18, 18, 18);
+  --font-color: #fff;
 }
 
-main {
-  background-color: var(--light-blue);
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.light-theme {
+  --primary-color: #fff;
+  --secondary-color: #fff;
+  --font-color: black;
+  --nav-color: rgb(232, 198, 255);
+}
+
+* {
+  margin: 0%;
 }
 
 nav {
@@ -18,18 +26,25 @@ nav {
   align-items: center;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: var(--lavender);
+  /* background-color: var(--lavender); */
+  background-color: var(--nav-color);
   padding: 5px 5px;
 }
 
 nav a {
   text-decoration: none;
-  color: black;
+  color: var(--font-color);
   font-size: 20px;
 }
 
 a:hover {
-  background-color: var(--lavender-hover);
+  text-decoration: underline;
+  color: var(--lavender-hover);
+}
+
+#toggle-icon {
+  width: 20px;
+  cursor: pointer;
 }
 
 #info-website {
@@ -66,29 +81,27 @@ form input[type=email]:focus {
   height: 25px;
 }
 
-.grid-container {
-  display: grid;
-  width: auto;
-}
-
 main {
-  display: grid;
-  width: auto;
+  background-color: var(--secondary-color);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   padding: 15px 15px;
   text-align: center;
 }
 
-img {
-  height: auto;
+main .wallpaper img {
+  height: 350px;
   width: auto;
-  padding: 5px 5px;
+  padding: 8px 8px;
   padding-right: 0px;
   padding-bottom: 0px;
 }
 
 main .wallpaper img:hover {
-  box-shadow:5px 5px var(--dark-blue-hover);
-  height: 350px;
+  box-shadow:5px 5px var(--nav-color);
+  height: 360px;
 }
   
 h3 {
@@ -105,6 +118,7 @@ p, ul {
 .modal {
   display: none;
   position: fixed;
+  color: black;
   z-index: 1;
   left: 0;
   top: 0;
@@ -191,20 +205,14 @@ form-icons i {
   font-weight: bold;
 }
 
+footer {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  padding: 5px 5px;
+}
+
 footer a {
-  color: black;
+  color: var(--font-color);
   text-decoration: none;
   font-style: italic;
-}
-
-@media screen and (min-width: 500px) {
-  .grid-container {
-    grid-template-columns: 0fr 2fr 0fr;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  .grid-container {
-    grid-template-columns: 1fr 6fr 1fr;
-  }
 }

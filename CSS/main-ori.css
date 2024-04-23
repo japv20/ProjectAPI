@@ -1,0 +1,210 @@
+:root {
+  --font-size: 1.5em;
+  --p-size: 1.3em;
+  --light-blue: rgb(160, 212, 255);
+  --dark-blue-hover: rgb(0, 110, 255);
+  --lavender: rgb(232, 198, 255);
+  --lavender-hover: rgb(242, 224, 255);
+}
+
+main {
+  background-color: var(--light-blue);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--lavender);
+  padding: 5px 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+a:hover {
+  background-color: var(--lavender-hover);
+}
+
+#info-website {
+  font-size: var(--p-size);
+}
+
+form {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+form label {
+  font-size: 16px;
+}
+
+form input[type="email"] {
+  height: 25px;
+  width: 250px;
+  font-size: 14px;
+}
+
+form input[type=email]:focus {
+  border: 2px solid black;
+}
+
+#submit-button {
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 70px;
+  height: 25px;
+}
+
+.grid-container {
+  display: grid;
+  width: auto;
+}
+
+main {
+  display: grid;
+  width: auto;
+  padding: 15px 15px;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  width: auto;
+  padding: 5px 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+
+main .wallpaper img:hover {
+  box-shadow:5px 5px var(--dark-blue-hover);
+  height: 350px;
+}
+  
+h3 {
+  font-size: var(--font-size);
+  text-align: center;
+}
+
+p, ul {
+  font-size: 16px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgb(0,0,0,0.9);
+}
+
+.modal-details {
+  background-color: #fefefe;
+  margin: 8%;
+  padding: 20px;
+  border: 1px solid rgb(136, 136, 136);
+  width: auto;
+  vertical-align: center;
+}
+
+.close {
+  color: rgb(176, 176, 176);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.info-container a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#animeDetails {
+  padding-left: 0%;
+}
+
+#search {
+  display: inline-block;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  width: 120px;
+  height: 20px;
+}
+
+form-icons i {
+  position: absolute;
+}
+
+#search-button, #clear-button {
+  background-color: var(--lavender);
+  border: none;
+  height: 20px;
+  cursor: pointer;
+}
+
+#search-button:hover, #clear-button:hover {
+  background-color: var(--lavender-hover);
+}
+
+#results {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: var(--light-blue);
+}
+
+#results img {
+  position:static;
+  vertical-align: center;
+  justify-self: center;
+}
+
+#results a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+}
+
+@media screen and (min-width: 500px) {
+  .grid-container {
+    grid-template-columns: 0fr 2fr 0fr;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .grid-container {
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+}

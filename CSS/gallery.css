@@ -2,9 +2,16 @@
     box-sizing: border-box;
 }
 
+#center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
 #gallery-pics {
-    border: 1px solid;
+    /* border: 1px solid; */
     height: 400px;
+    width: 50%;
 }
   
 #gallery-pics img {
@@ -17,7 +24,8 @@
 }
   
 #gallery-pics button {
-    background-color: rgb(160, 212, 255);
+    background-color: transparent;
+    color: white;
     border: none;
     padding: 5px 5px;
     cursor: pointer;
@@ -31,6 +39,7 @@
     width: 100%;
     text-align: center;
     display: none;
-    background-color: rgb(219, 253, 255);
+    background-color: white;
+    /* background-color: rgb(219, 253, 255); */
     width: 100%;
 }

@@ -21,7 +21,7 @@
         <img src="Pictures/svg-starr.svg" alt="SVG" id="svg-pic">
         <span id="logo-text" class="animation">  
             <div id="text" class="typewriter">
-                <p> Upcoming Animes! </p>
+                <p> Upcoming Animes! <img src="Pictures/sun.png" id="toggle-icon"/></p>
             </div>
         </span>
     </header>
@@ -34,11 +34,10 @@
             <button id="search-button"> <i class="fa fa-search"></i> </button>
             <button id="clear-button"> <i class="fa fa-refresh"></i> </button>
         </form>
+        <!-- <button> <i class="fa fa-adjust" aria-hidden="true"></i> </button> -->
     </nav>
 
     <div class="grid-container">
-        <div class="sides"></div>
-    
         <main>
             <div id="myModal" class="modal">
                     <div class="modal-details">
@@ -52,9 +51,11 @@
         <div id="results"></div>
         <div id="error-results"></div>
 
+            <div id="center-container">
             <div id="gallery-pics">
                 <button> <i id="play" class="fa fa-play"></i> </button>
                 <button> <i id="pause" class="fa fa-pause"></i> </button>
+            </div>
             </div>
             
             <p id="info-website"> Kei reports is a blog where you can find the soon-to-come animes for the seasons of
@@ -62,25 +63,20 @@
                 to visit the 'Top 50 Manga' section!
             </p>
 
-            <!-- <form class="form" name="myForm" action="/my-handling-form-page" method="post"> -->
-                <form class="form" name="myForm">
+            <!-- <form class="form" name="myForm">
                 <label> Enter your email to subscribe our newsletter and get updated on the soon-to-come animes 
                 for Autumn and Winter: </label> <br> 
-                <!-- <input type="email" name="email" id="email" placeholder="email@example.com" pattern=".+@gmail.com" required/> -->
                 <input type="email" name="email" id="email" placeholder="email@example.com">
                 <br />
-                <!-- <button id="submit-button" type="submit" value="Submit"> Submit </button> -->
                 <input type="submit" id="submit-button" value="Submit">
-            </form>
+            </form> -->
             
             <div class="wallpaper"></div>
         </main>
-
-        <div class="sides"></div>
-    </div>
+    </div> 
 
     <footer>
-        <p> Developed by Jackeline Palacios Vaz. Powered by <a href="https://docs.api.jikan.moe/"> Jikan </a> </p>
+        <p> Developed by <a target="_blank" href="https://www.japvdevelopment.com/"> japvdev </a>. Powered by <a target="_blank" href="https://docs.api.jikan.moe/"> Jikan </a> </p>
     </footer>
 </body>
 

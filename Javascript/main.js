@@ -69,6 +69,17 @@ document.addEventListener('DOMContentLoaded', async() => {
         setTimeout(carousel, 2000);
     })
 
+    let icon = document.getElementById('toggle-icon');
+    icon.onclick = function () {
+        document.body.classList.toggle("light-theme");
+        if(document.body.classList.contains("light-theme")) {
+            icon.src= "Pictures/moon.png";
+        } else {
+            icon.src= "Pictures/sun.png";
+        }
+    }
+
+
     upcomingAnimes.forEach(animeInList => {
         
         function dataByMALID(mal_id) {

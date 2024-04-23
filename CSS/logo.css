@@ -1,5 +1,17 @@
+:root {
+    --primary-color: rgb(30, 30, 30);
+    --secondary-color: rgb(18, 18, 18);
+    --font-color: #fff;
+}
+.light-theme {
+    --primary-color: #fff;
+    --secondary-color: #fff;
+    --font-color: black;
+}
+
 header {
     text-align: center;
+    background-color: var(--primary-color);
 }
 
 header #svg-pic {
@@ -63,7 +75,7 @@ header #svg-pic {
 /* DEMO-SPECIFIC STYLES */
 .typewriter p {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    color: black;
+    color: var(--font-color);
     /* display: none; */
     font-family: 'JetBrains Mono', monospace;
     font: bold;

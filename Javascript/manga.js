@@ -13,6 +13,16 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     topMangas.forEach(mangaInList => {
 
+        let icon = document.getElementById('toggle-icon');
+        icon.onclick = function () {
+        document.body.classList.toggle("light-theme");
+        if(document.body.classList.contains("light-theme")) {
+            icon.src= "Pictures/moon.png";
+        } else {
+            icon.src= "Pictures/sun.png";
+        }
+    }
+
         function dataByMALID(mal_id) {
             const foundMalID = topMangas.find(id => id.mal_id == mal_id);
             return foundMalID;
